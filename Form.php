@@ -3,10 +3,11 @@
 
 <head>
   <title>Form</title>
-   <script src="valid.js"> </script>
+   
 </head>
 
 <body>
+
 
 <?php
 
@@ -134,11 +135,12 @@
   <h1>Basic information</h1>
   <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     First Name
-    <input type=”text” name='first_name'>
-    <span><?php echo $firstnameError; ?></span>
+    <input type=”text” name='first_name' id="first_name">
+    <label for="" id="firstnameError"></label>
     Last Name:
-    <input type="text" name="last_name">
-    <span><?php echo $lastnameError; ?></span>
+    <input type="text" name="last_name" id="last_name">
+    <!-- <span><?php echo $lastnameError; ?></span> -->
+    <label id="lastnameError"></label>
     <br>
     Gender:
     <input type="radio" id="male" name="gender" value="male">
@@ -147,11 +149,13 @@
     <label for="female">Female</label><br>
     <input type="radio" id="other" name="gender" value="other">
     <label for="other">Other</label>
-    <span><?php echo $genderError; ?></span>
+    <!-- <span><?php echo $genderError; ?></span> -->
+    <label id="genderError"></label>
     <br>
     <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthday" name="birthdate">
-    <span><?php echo $birthdateError; ?></span>
+    <input type="date" id="birthdate" name="birthdate">
+    <!-- <span><?php echo $birthdateError; ?></span> -->
+    <label id="birthdateError"></label>
 
     <br>
     <br>
@@ -163,7 +167,8 @@
       <option value="Christ">Christ</option>
       <option value="Buddah">Buddah</option>
     </select>
-    <span><?php echo $relegionError; ?></span>
+    <!-- <span><?php echo $relegionError; ?></span> -->
+    <label id="relegionError"></label>
     <br>
     <h2>Contact Information</h2>
     Present Address
@@ -178,7 +183,8 @@
     <br>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email">
-    <span><?php echo $emailError; ?></span>
+    <!-- <span><?php echo $emailError; ?></span> -->
+    <label id="emailError"></label>
 
     <br>
     <br>
@@ -188,16 +194,20 @@
     <br>
     <label>Username:</label>
     <input type="text" name="username" id="username">
-    <span><?php echo $usernameError; ?></span>
+    <!-- <span><?php echo $usernameError; ?></span> -->
+    <label id="usernameError"></label>
     <br>
     <br>
     <label>Password:</label>
-    <input type="password" name="password" id="pass">
-    <span><?php echo $passwordError; ?></span>
+    <input type="password" name="password" id="password">
+    <!-- <span><?php echo $passwordError; ?></span> -->
+    <label id="passwordError"></label>
     <br>
-    <input type="submit">
+    <button type="submit" onclick="return validate()">Submit</button>
+
 
   </form>
+  <script type="text/javascript" src="./valid.js"></script>
 </body>
 
 </html>
